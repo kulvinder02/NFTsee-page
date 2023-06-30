@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;400;600&family=Roboto:wght@100;300;400;500&family=Rye&family=Work+Sans:wght@100;200;400;500;600&display=swap');
+
+
+:root {
+    --ff-primary: "Inter", sans-serif;
+
+    --fs-xs: 7px;
+    --fs-sm: 10px;
+    --fs-2sm: 11px;
+    --fs-md: 12px;
+    --fs-lg: 14px;
+    --fs-xl: 16px;
+    --fs-xxl: 18px;
+    --fs-3xl: 20px;
+
+
+    --primary-color: white;
+    --secondary-color: #474749;
+}
+
+.fs_7{
+    font-size: var(--fs-xs) !important;
+  }
+  .fs_10{
+    font-size: var(--fs-sm) !important;
+  }
+  .fs_12{
+    font-size: var(--fs-md) !important;
+  }
+  .fs_16{
+    font-size: var(--fs-xl) !important;
+  }
+  .fs_18{
+    font-size: var(--fs-xxl) !important;
+  }
+  .fs_20{
+    font-size: var(--fs-3xl) !important;
+  }

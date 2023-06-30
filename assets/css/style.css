@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;400;600&family=Roboto:wght@100;300;400;500&family=Rye&family=Work+Sans:wght@100;200;400;500;600&display=swap');
-
 * {
     padding: 0;
     margin: 0;
@@ -10,6 +8,7 @@
 
 .container {
     max-width: 1320px !important;
+    overflow: hidden !important;
 }
 
 .row {
@@ -18,6 +17,10 @@
     flex-wrap: wrap;
     margin-left: 12px;
     margin-right: 12px;
+}
+.position_sticky{
+    position: sticky;
+    top: 0%;
 }
 
 nav {
@@ -53,7 +56,7 @@ nav {
 
 .search_box {
     color: #000;
-    font-size: 18px;
+    font-size: var(--fs-xxl) !important;
     font-family: Poppins;
     border-radius: 25.5px;
     border: 1px solid rgba(0, 0, 0, 0.20);
@@ -84,7 +87,7 @@ nav {
 
 .box1_heading {
     color: #000;
-    font-size: 18px;
+    font-size: var(--fs-xxl) !important;
     font-family: Poppins;
     opacity: 0.6000000238418579;
     margin-left: 17px;
@@ -142,7 +145,7 @@ span {
     background: #FFF;
     opacity: 0.6000000238418579;
     color: #000;
-    font-size: 18px;
+    font-size: var(--fs-xxl) !important;
     font-family: Poppins;
     border: none;
     outline: none;
@@ -154,7 +157,7 @@ span {
 
 .post_bttn {
     color: #1A9FFF;
-    font-size: 18px;
+    font-size: var(--fs-xxl) !important;
     font-family: Poppins;
     opacity: 0.6000000238418579;
     padding-right: 24px;
@@ -163,7 +166,7 @@ span {
 .side_box_heading {
     margin-top: 102px;
     color: #000;
-    font-size: 18px;
+    font-size: var(--fs-xxl) !important;
     font-family: Poppins;
     opacity: 0.6000000238418579;
     margin-bottom: 21px;
@@ -173,7 +176,7 @@ span {
 label {
     margin-left: 14px;
     color: #000;
-    font-size: 18px;
+    font-size: var(--fs-xxl) !important;
     font-family: Poppins;
     opacity: 0.6000000238418579;
     cursor: pointer;
@@ -182,7 +185,7 @@ label {
 
 .followlink {
     color: #1A9FFF;
-    font-size: 18px;
+    font-size: var(--fs-xxl) !important;
     font-family: Poppins;
     margin-left: 75px;
     margin-right: 12px;
@@ -192,7 +195,7 @@ label {
     margin-top: 39px;
     margin-bottom: 22px;
     color: #000;
-    font-size: 18px;
+    font-size: var(--fs-xxl) !important;
     font-family: Poppins;
     opacity: 0.6000000238418579;
 }
@@ -206,11 +209,6 @@ label {
     color: white !important;
 }
 
-.position_sticky {
-    position: sticky;
-    top: 0%;
-    z-index: 10;
-}
 
 .mb_bttm {
     margin-bottom: 76px;
@@ -233,6 +231,18 @@ label {
 .nav-box {
     display: none;
 }
+.box-sm-screen {
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: #FFF;
+    width: 190px;
+    height: 129px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 @media (max-width:992px) {
     .nav-box {
@@ -246,12 +256,15 @@ label {
     .opicity_sm_screem {
         display: block;
     }
-
+   
     .nav-bar-md-screen {
-        display: block;
+        opacity: 0;
+        pointer-events: none;
         position: fixed;
         top: 0;
         left: -100%;
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -259,9 +272,10 @@ label {
         z-index: 10;
     }
 
-    input[type="checkbox"]:checked+ul .nav-bar-md-screen {
-        display: block;
+    input[type="checkbox"]:checked+ul.nav-bar-md-screen {
+        opacity: 1;
         left: 0;
+        pointer-events: all;
         z-index: 10;
     }
 
@@ -280,6 +294,23 @@ label {
 }
 
 @media (min-width:1200px) {
+    .position_sticky{
+        position: fixed !important;
+        top: 5% !important;
+        right: 0%;
+    }
+    .box-sm-screen{
+        border: none;
+        flex-direction: row;
+        white-space: nowrap;
+        height: unset;
+        margin-left: 50px;
+    }
+    .position_sticky{
+        position: sticky;
+        top: 0%;
+    }
+
     #mostliked {
         opacity: 100% !important;
     }
@@ -293,7 +324,15 @@ label {
     }
 }
 
-@media (min-width:475px) and (max-width:1200px) {
+@media (min-width:400px) and (max-width:1199px) {
+    .side_box_heading {
+        margin-top: 38px;
+        color: #000;
+        font-size: var(--fs-xxl) !important;
+        font-family: Poppins;
+        opacity: 0.6000000238418579;
+        margin-bottom: 21px;
+    }
 
     #mostliked {
         opacity: 0;
@@ -301,7 +340,6 @@ label {
 
     #recently {
         opacity: 0;
-
     }
 
     .recently {
@@ -322,6 +360,7 @@ label {
 
     .side_box_heading {
         margin-left: 35px;
+        white-space: nowrap;
     }
 
     .mostliked {
@@ -349,21 +388,26 @@ label {
         margin-left: 30px;
     }
 
-    .box-sm-screen {
-        border: 1px solid rgba(0, 0, 0, 0.20);
-        background: #FFF;
-        width: 219px;
-        height: 129px;
-        flex-shrink: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
+
 
     .followlink {
         margin-left: 16px;
     }
 
+    .flex_dir {
+        display: flex;
+    }
+
+    .mb_16 {
+        margin-right: 23px;
+    }
+
+}
+@media (min-width:320px) {
+    .col-12-xs{
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
 }
