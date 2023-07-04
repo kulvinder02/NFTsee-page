@@ -206,9 +206,7 @@ label {
 
 .dark-mode {
     background-color: black;
-    color: white !important;
 }
-
 
 .mb_bttm {
     margin-bottom: 76px;
@@ -294,6 +292,9 @@ label {
 }
 
 @media (min-width:1200px) {
+    .box-sm-screen {
+    background: unset;
+    }
     .position_sticky{
         position: fixed !important;
         top: 5% !important;
